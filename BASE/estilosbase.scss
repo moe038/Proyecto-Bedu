@@ -1,0 +1,123 @@
+@import '../SASS/colores.scss';
+
+%btn {color:#fff;
+font-size: 13px;font-weight: bold;}
+
+.btn-ingresar {background-color:$amarillo; @extend %btn;
+
+&:hover{  background-color: lighten($amarillo, 30%);
+}
+}
+
+
+a{color:$naranja;
+text-decoration: none;
+&:hover {color:darken($naranja, 20%);text-decoration: none;}
+
+}
+
+.btn-mas {background-color: $naranja;
+  @extend %btn ;float:right;
+&:hover {background-color: lighten($naranja, 20%)}
+}
+
+
+
+.navbar a {font-size:12px;}
+
+footer {height:50px; background-color: $amarillo;
+p{text-align: center;color:#fff;}
+}
+
+.logo img {
+
+  width:50%;
+  max-width:150px;}
+
+.dropdown {top:7px;font-weight: bold;}
+
+.fondo {
+width: 100vw;
+height: 466px;
+background-image: url("../img/dogos.png");
+background-size:cover;
+}
+
+.fondobarra {
+background-color: rgba($amarillo,0.7);
+width: 100%;
+height:auto;
+position: relative;
+top:216px;
+padding: 10px;
+}
+
+
+
+section {margin-top: 50px;}
+
+
+
+//slider*/
+
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
+}
